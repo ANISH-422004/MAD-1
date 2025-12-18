@@ -1,0 +1,13 @@
+<! DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"></head>
+<body>
+{% macro render_field(value='field value', content='content value') %}
+    <option value="{{value}}">{{content}}</option>
+{% endmacro %}
+
+{% for item in itemlist %}
+    {{ render_field(item.value, item.content) }}
+{% endfor %}
+</body>
+</html>

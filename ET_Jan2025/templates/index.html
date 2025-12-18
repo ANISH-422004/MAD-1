@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students & Test Marks</title>
+</head>
+<body>
+    <h1>Student Test Results</h1>
+
+    <h2>{{ student.marks }}</h2>
+
+        {% if student.tests %}
+            <ul>
+                {% for test in student.tests %}
+                    <li>
+                        {{ test.test_name }} → {{ test.marks }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No tests available</p>
+        {% endif %}
+    {% endfor %}
+
+</body>
+</html>

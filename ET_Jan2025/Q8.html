@@ -1,0 +1,24 @@
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{text-align: center;}
+        p{font-size: 30px;color: black;}
+        .blue{color: red;}
+        .red{color: green !important; }
+        .green{color: blue;}
+        #myId{color: grey;}
+    </style>
+</head>
+<body>
+    <div>
+        <p class="blue">Text1</p> # <!--red-->
+        <p class="red" id="myId">Text2</p> <!-- green -->
+        <p class="green" id="myId">Text3</p> <!-- grey -->
+        <p class="green">Text4</p> <!--blue-->
+    </div>
+</body>
+</html>
+<!-- inline > internal > external-->
+ <!-- !important > id > class > element -->

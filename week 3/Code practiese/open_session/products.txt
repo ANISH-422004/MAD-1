@@ -1,0 +1,22 @@
+products = [
+  { "product_id": 1, "product_name": "iPhone 14", "type": "Smartphone", "company": "Apple" },
+  { "product_id": 2, "product_name": "Galaxy S23", "type": "Smartphone", "company": "Samsung" },
+  { "product_id": 3, "product_name": "ThinkPad X1", "type": "Laptop", "company": "Lenovo" },
+  { "product_id": 4, "product_name": "MacBook Pro", "type": "Laptop", "company": "Apple" },
+  { "product_id": 5, "product_name": "XPS 15", "type": "Laptop", "company": "Dell" },
+  { "product_id": 6, "product_name": "Pixel 7", "type": "Smartphone", "company": "Google" },
+  { "product_id": 7, "product_name": "iPad Pro", "type": "Tablet", "company": "Apple" },
+  { "product_id": 8, "product_name": "Surface Pro 9", "type": "Tablet", "company": "Microsoft" },
+  { "product_id": 9, "product_name": "PlayStation 5", "type": "Gaming Console", "company": "Sony" },
+  { "product_id": 10, "product_name": "Xbox Series X", "type": "Gaming Console", "company": "Microsoft" },
+  { "product_id": 11, "product_name": "AirPods Pro", "type": "Earbuds", "company": "Apple" },
+  { "product_id": 12, "product_name": "Galaxy Buds 2", "type": "Earbuds", "company": "Samsung" },
+  { "product_id": 13, "product_name": "Inspiron 14", "type": "Laptop", "company": "Dell" },
+  { "product_id": 14, "product_name": "Redmi Note 12", "type": "Smartphone", "company": "Xiaomi" },
+  { "product_id": 15, "product_name": "OnePlus 11", "type": "Smartphone", "company": "OnePlus" },
+  { "product_id": 16, "product_name": "Apple Watch Series 9", "type": "Smartwatch", "company": "Apple" },
+  { "product_id": 17, "product_name": "Galaxy Watch 6", "type": "Smartwatch", "company": "Samsung" },
+  { "product_id": 18, "product_name": "Mi Pad 6", "type": "Tablet", "company": "Xiaomi" },
+  { "product_id": 19, "product_name": "Legion 5", "type": "Gaming Laptop", "company": "Lenovo" },
+  { "product_id": 20, "product_name": "ROG Phone 7", "type": "Gaming Smartphone", "company": "Asus" }
+]

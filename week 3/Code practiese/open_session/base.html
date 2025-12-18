@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for p in products | groupby("company") -%}
+        <h2>Companyname : {{ p.grouper }}</h2>
+        <h1>Product table</h1>
+        <table border="1">
+               {% for item in p.list %}
+                   <tr>
+                       <td>{{ item.product_id }}</td>
+                       <td>{{ item.product_name }}</td>
+                       <td>{{ item.type }}</td>
+                   </tr>
+               {% endfor %}
+        </table>
+
+    {%- endfor %}
+
+</body>
+</html>

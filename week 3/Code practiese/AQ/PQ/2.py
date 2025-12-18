@@ -1,0 +1,33 @@
+
+from jinja2 import Template
+
+
+name = "anish"
+palce = "IITM"
+profession = "student"
+
+
+
+
+temp = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ name }}</h1>
+    <p>I study in {{ place }}.</p>
+    <p>I am a {{ profession }}.</p>
+</body>
+</html>"""
+
+
+
+made_template = Template(temp)
+
+
+output = made_template.render(name=name, place=palce, profession=profession)
+
+print(output)

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LinkedIn Profile Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #0077b5;
+            margin-bottom: 20px;
+        }
+
+        /* Search bar */
+        .search-box {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .search-box input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .search-box button {
+            padding: 10px 20px;
+            background-color: #0077b5;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* Saved profiles */
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: #222;
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Action buttons */
+        .btn {
+            padding: 6px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .btn-update {
+            background-color: #f0ad4e;
+            color: white;
+        }
+
+        .btn-delete {
+            background-color: #d9534f;
+            color: white;
+        }
+
+        .link {
+            color: #0077b5;
+            text-decoration: none;
+        }
+
+        input.small-input {
+            padding: 6px;
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <h1>🔍 LinkedIn Profile Finder</h1>
+
+            <div class="search-box">
+                <input type="text" placeholder="Enter name...">
+                <button>Search & Add</button>
+            </div>
+        </div>
+
+        <!-- Saved Profiles -->
+        <div class="card">
+            <h2>Saved Profiles</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>LinkedIn URL</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Pratham Bhalla</td>
+                        <td>
+                            <a href="#" class="link">View Profile</a>
+                        </td>
+                        <td>
+                            <input class="small-input" type="text" placeholder="New Name">
+                            <input class="small-input" type="text" placeholder="New URL">
+                            <button class="btn btn-update">Update</button>
+                            <button class="btn btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

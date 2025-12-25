@@ -15,7 +15,7 @@ class User(db.Model):
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(100), nullable=False)
-    
+    roles = db.relationship("Role" , secondary="user_role", backref="users" )
     customers_details = db.relationship("Customer" , backref = "user" , lazy = True )
     store_managers_details = db.relationship("StoreManager" , backref = "user" , lazy = True , uselist = False)
     
@@ -25,7 +25,7 @@ class UserRole(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"), nullable=False)
-    role_id = db.column(db.Integer, db.ForeignKey("role.role_id", nullabale=False))
+    role_id = db.Column(db.Integer, db.ForeignKey("role.role_id"), nullable=False)
 
 
 class StoreManager(db.Model):

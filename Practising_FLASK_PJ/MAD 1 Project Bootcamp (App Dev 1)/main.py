@@ -26,26 +26,24 @@ with app.app_context():
     # 3️⃣ Create Super Admin user
     admin_user = User.query.filter_by(email="admin@gmail.com").first()
 
-    print(admin_user.roles)
-
     if not admin_user:
         
         admin_role_id = Role.query.filter_by(name="admin").first()
+        StoreManager_role_id = Role.query.filter_by(name="manager").first()
         admin_user = User(
             name="Super_Admin",
             email="admin@gmail.com",
             password="admin",
-            roles=[admin_role_id]
+            roles=[admin_role_id , StoreManager_role_id]
         )
         db.session.add(admin_user)
         db.session.commit()  # user_id generated here
 
-        
-
-
-
-    # 4️⃣ Assign admin role to Super Admin
-    
+        # 4️⃣ Assigning user<-->role to Super Admin
+        user_role = UserRole(
+            user_id = admin_user.user_id,
+            role_id = admin_role_id
+        )
 
 
 

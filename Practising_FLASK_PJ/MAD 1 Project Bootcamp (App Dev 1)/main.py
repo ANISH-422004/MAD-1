@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template , request
 from db.db import db
 from config.config import Config
 from models.models import *
@@ -52,10 +52,15 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/login")
+@app.route("/login" , methods=["GET", "POST"])
 def login():
-    return render_template("login.html")
-
+    if(request.method == "GET"):
+        return render_template("login.html")
+    if(request.method == "POST"):
+        email = request.form.get("email")
+        password = request.form.get("password")
+        # Logic to authenticate user
+        return f"Email: {email}, Password: {password}"
 
 if __name__ == "__main__":
     app.run(debug=True)

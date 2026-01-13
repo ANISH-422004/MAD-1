@@ -47,16 +47,14 @@ with app.app_context():
 
 
 
-
-
 @app.route("/")
 def home():
     return render_template("index.html")
 
 
-@app.route("/about")
-def about():
-    return "This is a simple Flask application."
+@app.route("/login")
+def login():
+    return render_template("login.html")
 
 
 if __name__ == "__main__":

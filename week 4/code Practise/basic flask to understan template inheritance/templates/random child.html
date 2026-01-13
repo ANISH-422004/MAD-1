@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Random Child Page{% endblock %}
+
+{% block content %}
+
+
+{{ super() }}
+<div class="container mt-4 bg-warning p-3 ">
+  <h2>Random Child Page</h2>
+  <p>This is a random child page extending the base template.</p>
+   <a class="btn btn-outline-info" type="button" href="/" >Go to Home</a>
+</div>
+
+{% endblock %}
+
+
+<!-- Without super(), when you override a block, you replace it completely.-->

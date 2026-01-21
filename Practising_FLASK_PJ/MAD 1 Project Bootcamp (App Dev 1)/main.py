@@ -2,6 +2,10 @@ from flask import Flask, render_template , request
 from db.db import db
 from config.config import Config
 from models.models import *
+from routes.auth_routes import auth_bp
+from routes.home_route import home_bp
+
+
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
 
@@ -14,7 +18,7 @@ with app.app_context():
     db.create_all()
 
     # 2️⃣ Create roles if not exists
-    roles = ["admin", "customer", "manager"]
+    roles = ["admin", "customer", "store_manager"]
 
     for role_name in roles:
         role = Role.query.filter_by(name=role_name).first()
@@ -29,7 +33,7 @@ with app.app_context():
     if not admin_user:
         
         admin_role_id = Role.query.filter_by(name="admin").first()
-        StoreManager_role_id = Role.query.filter_by(name="manager").first()
+        StoreManager_role_id = Role.query.filter_by(name="store_manager").first()
         admin_user = User(
             name="Super_Admin",
             email="admin@gmail.com",
@@ -47,20 +51,11 @@ with app.app_context():
 
 
 
-@app.route("/")
-def home():
-    return render_template("index.html")
 
 
-@app.route("/login" , methods=["GET", "POST"])
-def login():
-    if(request.method == "GET"):
-        return render_template("login.html")
-    if(request.method == "POST"):
-        email = request.form.get("email")
-        password = request.form.get("password")
-        # Logic to authenticate user
-        return f"Email: {email}, Password: {password}"
+app.register_blueprint(home_bp)
+app.register_blueprint(auth_bp)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

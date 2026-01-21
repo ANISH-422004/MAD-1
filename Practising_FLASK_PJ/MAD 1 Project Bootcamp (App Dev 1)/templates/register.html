@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+<div class="container p-3 justify-content-center">
+  <h1 class="text-info text-center">Register</h1>
+
+  <form method="POST" action="/register">
+
+    <!-- Name -->
+    <div class="mb-3">
+      <label class="form-label">Full Name</label>
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        placeholder="John Doe"
+        required
+      />
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label class="form-label">Email address</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        placeholder="abc@gmail.com"
+        required
+      />
+    </div>
+
+    <!-- Password -->
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        placeholder="Minimum 6 characters"
+        required
+      />
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="mb-3">
+      <label class="form-label">Confirm Password</label>
+      <input
+        type="password"
+        name="confirm_password"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <!-- Role Selection -->
+    <div class="mb-3">
+      <label class="form-label">Register As</label>
+      <select name="role" class="form-select" required>
+        <option value="" disabled selected>Choose role</option>
+        <option value="customer">Customer</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-outline-success w-100">
+      Register
+    </button>
+
+    <p class="text-center mt-3">
+      Already have an account?
+      <a href="/login">Login here</a>
+    </p>
+
+  </form>
+</div>
+
+{% endblock %}
